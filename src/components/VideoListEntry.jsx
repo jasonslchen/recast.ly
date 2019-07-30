@@ -1,11 +1,11 @@
-var VideoListEntry = () => (
+var VideoListEntry = (prop) => (
   <div className="video-list-entry media">
     <div className="media-left media-middle">
-      <img className="media-object" src="https://i.ytimg.com/vi/1w8Z0UOXVaY/default.jpg" alt="" />
+      <img className="media-object" src={prop.video.snippet.thumbnails.default.url} alt="" />
     </div>
     <div className="media-body">
-      <div className="video-list-entry-title">Video Title</div>
-      <div className="video-list-entry-detail">Video Description</div>
+      <div className="video-list-entry-title">{prop.video.snippet.title}</div>
+      <div className="video-list-entry-detail">{prop.video.snippet.description}</div>
     </div>
   </div>
 );
