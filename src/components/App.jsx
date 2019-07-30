@@ -1,7 +1,7 @@
-import exampleVideoData from '../data/exampleVideoData.js'
-import VideoPlayer from '../components/VideoPlayer.js'
-import Search from '../components/Search.js'
-import VideoList from '../components/VideoList.js'
+import exampleVideoData from '../data/exampleVideoData.js';
+import VideoPlayer from '../components/VideoPlayer.js';
+import Search from '../components/Search.js';
+import VideoList from '../components/VideoList.js';
 
 var App = (props) => (
   <div>
@@ -12,7 +12,7 @@ var App = (props) => (
     </nav>
     <div className="row">
       <div className="col-md-7">
-        <div><h5><em>videoPlayer</em> view goes here</h5></div>
+        <VideoPlayer video={props.entry}/>
       </div>
       <div className="col-md-5">
         <VideoList videos={props.entry}/>

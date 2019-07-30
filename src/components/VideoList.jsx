@@ -8,7 +8,7 @@ var VideoList = (props) => (
   </div>
 );
 
-{/* <VideoListEntry videoEntry= {props.video[0]}/> */}
+
 
 // class VideoListEntry extends React.Component {
 //   constructor(props) {
