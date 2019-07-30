@@ -10,16 +10,6 @@ var VideoList = (props) => (
 
 
 
-// class VideoListEntry extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   };
-
-//   render() {
-//     return (<div><h5><em>{this.props.video.snippet.title}</em>{this.props.video.}</h5></div>)
-//   }
-// };
-
 
 
 // PropTypes tell other developers what `props` a component expects
