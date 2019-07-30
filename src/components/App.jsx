@@ -30,6 +30,8 @@ class App extends React.Component {
       videos: exampleVideoData,
       currentVideo: exampleVideoData[0]
     };
+
+    this.clickOnTitle = this.clickOnTitle.bind(this);
   }
 
   //setState on click, update currentVideo which clicked video in list
@@ -38,6 +40,8 @@ class App extends React.Component {
       currentVideo: clickedVideo//data of the video we clicked
     });
   }
+
+
 
 
   render() {
@@ -52,7 +56,7 @@ class App extends React.Component {
           <VideoPlayer video={this.state.currentVideo}/>
         </div>
         <div className="col-md-5">
-          <VideoList click={this.clickOnTitle.bind(this)} videos={this.state.videos}/>
+          <VideoList click={this.clickOnTitle} videos={this.state.videos}/>
         </div>
       </div>
     </div>;
