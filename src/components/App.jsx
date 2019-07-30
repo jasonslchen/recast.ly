@@ -32,6 +32,14 @@ class App extends React.Component {
     };
   }
 
+  //setState on click, update currentVideo which clicked video in list
+  onListItemClick() {
+    this.setState({
+
+    });
+  }
+
+
   render() {
     return <div>
       <nav className="navbar">
@@ -41,7 +49,7 @@ class App extends React.Component {
       </nav>
       <div className="row">
         <div className="col-md-7">
-          <VideoPlayer video={this.state.videos}/>
+          <VideoPlayer video={this.state.currentVideo}/>
         </div>
         <div className="col-md-5">
           <VideoList videos={this.state.videos}/>
