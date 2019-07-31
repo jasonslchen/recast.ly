@@ -2,6 +2,8 @@ import exampleVideoData from '../data/exampleVideoData.js';
 import VideoPlayer from '../components/VideoPlayer.js';
 import Search from '../components/Search.js';
 import VideoList from '../components/VideoList.js';
+import YOUTUBE_API_KEY from '../config/youtube.js';
+import searchYouTube from '../lib/searchYouTube.js';
 
 // var App = (props) => (
 //   <div>
@@ -27,11 +29,33 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      videos: [],
+      videos: exampleVideoData,
       currentVideo: exampleVideoData[0]
     };
+
     this.clickOnTitle = this.clickOnTitle.bind(this);
+
+    this.fakes = {
+      key: YOUTUBE_API_KEY,
+      query: 'dogs',
+      max: 5
+    };
   }
+
+
+  acquireYoutube () {
+    return this.props.searchYouTube(this.fakes, data => {
+      this.setState({
+        videos: data,
+        currentVideo: data[0]
+      });
+    });
+  }
+
+  componentDidMount () {
+    this.acquireYoutube();
+  }
+
 
   //setState on click, update currentVideo which clicked video in list
   clickOnTitle(clickedVideo) {
