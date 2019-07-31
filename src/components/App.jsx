@@ -27,10 +27,9 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      videos: exampleVideoData,
+      videos: [],
       currentVideo: exampleVideoData[0]
     };
-
     this.clickOnTitle = this.clickOnTitle.bind(this);
   }
 
