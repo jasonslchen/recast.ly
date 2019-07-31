@@ -35,6 +35,8 @@ class App extends React.Component {
 
     this.clickOnTitle = this.clickOnTitle.bind(this);
 
+    this.addVideos = this.addVideos.bind(this);
+
     this.fakes = {
       key: YOUTUBE_API_KEY,
       query: 'dogs',
@@ -64,6 +66,11 @@ class App extends React.Component {
     });
   }
 
+  addVideos (newVideo) {
+    this.setState((state) => {return {videos : state.videos.push(newVideo)};}
+
+    );
+  }
 
 
 
@@ -71,7 +78,7 @@ class App extends React.Component {
     return <div>
       <nav className="navbar">
         <div className="col-md-6 offset-md-3">
-          <Search/>
+          <Search addVideo={this.addVideos} videos={this.state.videos}/>
         </div>
       </nav>
       <div className="row">
